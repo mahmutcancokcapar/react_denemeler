@@ -21,9 +21,9 @@ button {
     border-radius: 50%;
     cursor: pointer;
     font-size: 30px;
-    color: white;
     display: flex;
     padding: 20px;
+    color: white;
     margin: 10px;
     border: none;
     height: 60px;
@@ -35,9 +35,12 @@ button:hover {
 }
 
 #sonuc {
+    justify-content: center;
+    align-items: center;
     font-weight: bold;
     font-size: 50px;
     margin: 20px;
+    display: flex;
 }
 
 input {

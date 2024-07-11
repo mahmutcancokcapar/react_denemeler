@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import Counter from "./Counter";
 
 const App = () => {
 	const [counter, setCounter] = useState(0);
@@ -9,33 +10,28 @@ const App = () => {
 		setInputValue(Number(event.target.value));
 	};
 
-	const arttir = () => {
+	const increment = () => {
 		setCounter(counter + inputValue);
 	};
 
-	const azalt = () => {
+	const decrement = () => {
 		setCounter(counter - inputValue);
 	};
 
-	const sifirla = () => {
+	const reset = () => {
 		setCounter(0);
 	};
 
 	return (
 		<div className="App">
 			<h1>Counter App</h1>
-			<div id="sonuc">{counter}</div>
-			<div className="first-container">
-				<button onClick={arttir}>+</button>
-				<button onClick={azalt}>-</button>
-				<button onClick={sifirla}>0</button>
-			</div>
-			<input
-				type="number"
-				value={inputValue}
-				onChange={handleInputChange}
-				style={{ fontSize: 20, width: 50, textAlign: "center", marginTop: 20 }}
+			<Counter
+				counter={counter}
+				increment={increment}
+				decrement={decrement}
+				reset={reset}
 			/>
+			<input type="number" value={inputValue} onChange={handleInputChange} />
 		</div>
 	);
 };
